@@ -10,4 +10,10 @@ app.use(express.static("public"));
 app.use(express.json({limit: "2mb"}));
 app.use(express.urlencoded({ extended: true , limit: "2mb" }));
 
-  export default app;
+// Routes
+import userRouter from './routes/user.router.js';
+
+// Router declaration
+app.use('/api/v1/users', userRouter);
+
+export default app;
